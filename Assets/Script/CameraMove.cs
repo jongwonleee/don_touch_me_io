@@ -7,8 +7,8 @@ public class CameraMove : MonoBehaviour
     public GameObject Player;
 
     public float Xoffset = 0f;
-    public float Yoffset = 25f;
-    public float Zoffset = -35f;
+    public float Yoffset = 50f;
+    public float Zoffset = -60f;
 
     public float followSpeed;
 

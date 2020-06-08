@@ -6,6 +6,7 @@ public class PlayerMove : MonoBehaviour
 {
     public float Speed;
     public float rotateSpeed;
+    public Canvas canvasEnd;
 
     Vector3 Movement;
     float verticalmove;
@@ -27,7 +28,6 @@ public class PlayerMove : MonoBehaviour
         Bcollider = GetComponent<BoxCollider>();
         render = GetComponent<MeshRenderer>();
 
-        Speed = 4.0f;
         Mask = false;
         rotateSpeed = 15.0f;
     }
@@ -101,11 +101,13 @@ public class PlayerMove : MonoBehaviour
     {
         if (Mask == false)
         {
+            canvasEnd.enabled = true;
             gameObject.layer = 9;
             rigid.AddForce(Vector3.up * 5, ForceMode.Impulse);
             Ccollider.enabled = false;
             Bcollider.enabled = true;
             anim.SetBool("isHit", true);
+
         }
         else 
         {

@@ -10,7 +10,9 @@ public class OnClickStart : MonoBehaviour
     public Canvas canvasEnd;
     void Start()
     {
-        
+        canvasMain.enabled = false;
+        canvasStart.enabled = true;
+        canvasEnd.enabled = false;
     }
 
     // Update is called once per frame
@@ -23,10 +25,13 @@ public class OnClickStart : MonoBehaviour
     {
         canvasStart.enabled = false;
         canvasEnd.enabled = false;
+        canvasMain.enabled = true;
     }
 
     public void OnClickRestartButton()
     {
-
+        canvasStart.enabled = false;
+        canvasEnd.enabled = false;
+        canvasMain.enabled = true;
     }
 }
