@@ -1,0 +1,31 @@
+﻿<Properties StartupConfiguration="{40A9CA98-1C56-E1B6-12D3-F3B815B60C26}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Script/ChasingNPC.cs">
+    <Files>
+      <File FileName="Assets/Script/OnClickStart.cs" Line="11" Column="17" />
+      <File FileName="Assets/Script/NormalNPCMove.cs" />
+      <File FileName="Assets/Script/PlayerMove.cs" Line="104" Column="38" />
+      <File FileName="Assets/Script/CameraMove.cs" Line="10" Column="29" />
+      <File FileName="Assets/Script/ChasingNPC.cs" Line="1" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="don_touch_me_io" expanded="True">
+            <Node name="Assets" expanded="True">
+              <Node name="Script" expanded="True">
+                <Node name="ChasingNPC.cs" selected="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="024ea429-9035-467e-b381-e51c41b4e8ac" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
