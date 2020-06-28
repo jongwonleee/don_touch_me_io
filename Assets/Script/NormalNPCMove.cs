@@ -22,7 +22,7 @@ public class NormalNPCMove : MonoBehaviour
         Speed = 15.0f;
         rotateSpeed = 15.0f;
 
-        Invoke("Think", 0.5f);
+        Think();
     }
 
     void FixedUpdate()
@@ -61,7 +61,7 @@ public class NormalNPCMove : MonoBehaviour
     {
         if (collision.gameObject.tag == "Wall") {
             CancelInvoke();
-            verticalMove *= -1; horizontalMove *= -1;
+            horizontalMove *= -1;
             Invoke("Think", 3.0f);
         }
     }
