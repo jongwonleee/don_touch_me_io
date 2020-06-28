@@ -8,12 +8,14 @@ using UnityEngine.SceneManagement;
 public class OnClickStart : MonoBehaviour
 {
     TimeCheck TC;
+    ItemSpawning IS;
     public Canvas canvasStart;
     public Canvas canvasMain;
     public Canvas canvasEnd;
 
     void Start()
     {
+        IS = canvasMain.GetComponent<ItemSpawning>();
         TC = canvasMain.GetComponent<TimeCheck>();
         //canvasStart.enabled = true;
         //canvasMain.enabled = false;
@@ -29,6 +31,8 @@ public class OnClickStart : MonoBehaviour
         {
             GameObject Temp = Instantiate(TC.NNPC, TC.Position[i].transform.position, Quaternion.identity);
         }
+        for (int i = 0; i < 8; i++)
+            IS.CreateItem();
     }
 
     public void OnClickRestartButton()

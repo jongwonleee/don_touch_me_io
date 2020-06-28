@@ -12,6 +12,7 @@ public class PlayerMove : MonoBehaviour
     float horizontalmove;
 
     bool Mask;
+    public bool isItem;
 
     public Canvas canvasMain;
     public Canvas canvasEnd;
@@ -30,6 +31,7 @@ public class PlayerMove : MonoBehaviour
         Bcollider = GetComponent<BoxCollider>();
 
         Mask = false;
+        isItem = false;
 
         Speed = 30.0f;
         rotateSpeed = 15.0f;
@@ -88,12 +90,15 @@ public class PlayerMove : MonoBehaviour
             CancelInvoke("Slower");
             Faster();   Invoke("Slower", 10);
             collision.gameObject.SetActive(false);
+            isItem = true;
         }
         if (collision.gameObject.tag == "Mask") 
         {
             Mask = true;
             collision.gameObject.SetActive(false);
             ItemUIShow.itemMaskShow = true;
+            isItem = true;
+
         }
         if (collision.gameObject.tag == "Shield")
         {
@@ -102,6 +107,7 @@ public class PlayerMove : MonoBehaviour
             Invincibility();
             Invoke("DeActive", 10.0f);
             ItemUIShow.itemShieldShow = true;
+            isItem = true;
         }
         if (collision.gameObject.tag == "Smaller") 
         {
@@ -109,6 +115,7 @@ public class PlayerMove : MonoBehaviour
             collision.gameObject.SetActive(false);
             Smaller();
             Invoke("Bigger", 10.0f);
+            isItem = true;
         }
     }
 

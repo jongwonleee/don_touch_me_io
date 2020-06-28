@@ -69,6 +69,7 @@
     <Compile Include="Assets\Script\ChasingNPC.cs" />
     <Compile Include="Assets\Script\EndSceneSetting.cs" />
     <Compile Include="Assets\Script\FastNPCMove.cs" />
+    <Compile Include="Assets\Script\ItemSpawning.cs" />
     <Compile Include="Assets\Script\ItemUIShow.cs" />
     <Compile Include="Assets\Script\NormalNPCMove.cs" />
     <Compile Include="Assets\Script\OnClickStart.cs" />
