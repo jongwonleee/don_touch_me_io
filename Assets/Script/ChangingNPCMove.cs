@@ -18,7 +18,7 @@ public class ChangingNPCMove : MonoBehaviour
         rigid = GetComponent<Rigidbody>();
         anim = GetComponent<Animator>();
 
-        Speed = 15.0f;
+        Speed = 30.0f;
         rotateSpeed = 15.0f;
 
         Think();
@@ -50,7 +50,7 @@ public class ChangingNPCMove : MonoBehaviour
     {
         horizontalMove = Random.Range(-5.0f, 5.0f);
         verticalMove = Random.Range(-5.0f, 5.0f);
-        Speed = Random.Range(10.0f, 20.0f);
+        Speed = Random.Range(30.0f, 60.0f);
         anim.SetFloat("MoveSpeed", Speed);
 
         float nextThinkTime = Random.Range(3.0f, 5.0f);

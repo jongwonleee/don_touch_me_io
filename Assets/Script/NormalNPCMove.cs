@@ -19,7 +19,7 @@ public class NormalNPCMove : MonoBehaviour
         rigid = GetComponent<Rigidbody>();
         anim = GetComponent<Animator>();
 
-        Speed = 15.0f;
+        Speed = 30.0f;
         rotateSpeed = 15.0f;
 
         Think();

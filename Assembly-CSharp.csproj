@@ -69,10 +69,12 @@
     <Compile Include="Assets\Script\ChasingNPC.cs" />
     <Compile Include="Assets\Script\EndSceneSetting.cs" />
     <Compile Include="Assets\Script\FastNPCMove.cs" />
+    <Compile Include="Assets\Script\ItemUIShow.cs" />
     <Compile Include="Assets\Script\NormalNPCMove.cs" />
     <Compile Include="Assets\Script\OnClickStart.cs" />
     <Compile Include="Assets\Script\OnRestartButtonClicked.cs" />
     <Compile Include="Assets\Script\PlayerMove.cs" />
+    <Compile Include="Assets\Script\PlayerSoundEffect.cs" />
     <Compile Include="Assets\Script\TimeCheck.cs" />
     <None Include="Assets\Resources\Text\Restart.txt" />
     <None Include="Assets\SimplePixelUI\fonts\Font2\license.txt" />

@@ -27,13 +27,13 @@ public class ChasingNPC : MonoBehaviour
         anim = GetComponent<Animator>();
         nav = GetComponent<NavMeshAgent>();
 
-        nav.speed = 13.0f;
+        nav.speed = 26.0f;
 
         Player = GameObject.FindGameObjectWithTag("Player");
 
-        Speed = 15.0f;
+        Speed = 30.0f;
         rotateSpeed = 15.0f;
-        ChasingDis = 45.0f;
+        ChasingDis = 60.0f;
 
         Think();
     }

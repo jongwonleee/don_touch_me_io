@@ -15,6 +15,7 @@ public class PlayerMove : MonoBehaviour
 
     public Canvas canvasMain;
     public Canvas canvasEnd;
+    public AudioSource dead;
 
     Rigidbody rigid;
     Animator anim;
@@ -30,7 +31,7 @@ public class PlayerMove : MonoBehaviour
 
         Mask = false;
 
-        Speed = 15.0f;
+        Speed = 30.0f;
         rotateSpeed = 15.0f;
     }
 
@@ -84,25 +85,30 @@ public class PlayerMove : MonoBehaviour
         }
         if (collision.gameObject.tag == "Haste") 
         {
-            Faster();   Invoke("Slower", 5);
+            CancelInvoke("Slower");
+            Faster();   Invoke("Slower", 10);
             collision.gameObject.SetActive(false);
         }
         if (collision.gameObject.tag == "Mask") 
         {
             Mask = true;
             collision.gameObject.SetActive(false);
+            ItemUIShow.itemMaskShow = true;
         }
-        if (collision.gameObject.tag == "Shield") 
+        if (collision.gameObject.tag == "Shield")
         {
+            CancelInvoke("DeActive");
             collision.gameObject.SetActive(false);
             Invincibility();
-            Invoke("DeActive", 5.0f);
+            Invoke("DeActive", 10.0f);
+            ItemUIShow.itemShieldShow = true;
         }
         if (collision.gameObject.tag == "Smaller") 
         {
+            CancelInvoke("Bigger");
             collision.gameObject.SetActive(false);
             Smaller();
-            Invoke("Bigger", 5.0f);
+            Invoke("Bigger", 10.0f);
         }
     }
 
@@ -119,25 +125,29 @@ public class PlayerMove : MonoBehaviour
             verticalmove = 0;
             horizontalmove = 0;
             anim.SetBool("isHit", true);
+            dead.Play();
         }
         else 
         {
             Mask = false;
             Invincibility();
+            ItemUIShow.itemMaskShow = false;
             Invoke("DeActive", 2.0f);
         }
     }
 
     void Faster() 
     {
-        Speed = 30.0f;
+        Speed = 60.0f;
         anim.SetBool("isBoost", true);
+        ItemUIShow.itemHeistShow = true;
     }
 
     void Slower() 
     {
-        Speed = 15.0f;
+        Speed = 30.0f;
         anim.SetBool("isBoost", false);
+        ItemUIShow.itemHeistShow = false;
     }
 
     void Invincibility() 
@@ -148,13 +158,17 @@ public class PlayerMove : MonoBehaviour
     void DeActive() 
     {
         gameObject.layer = 8;
+        ItemUIShow.itemShieldShow = false;
+
     }
 
     void Smaller() {
         gameObject.transform.localScale = new Vector3(2.0f, 2.0f, 2.0f);
+        ItemUIShow.itemSizeShow = true;
     }
 
     void Bigger() {
         gameObject.transform.localScale = new Vector3(5.0f, 5.0f, 5.0f);
+        ItemUIShow.itemSizeShow = false;
     }
 }

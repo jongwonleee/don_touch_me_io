@@ -91,7 +91,7 @@ AnimatorStateTransition:
   m_Conditions:
   - m_ConditionMode: 4
     m_ConditionEvent: MoveSpeed
-    m_EventTreshold: 15
+    m_EventTreshold: 45
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 8194033179092168778}
   m_Solo: 0
@@ -116,7 +116,7 @@ AnimatorStateTransition:
   m_Conditions:
   - m_ConditionMode: 3
     m_ConditionEvent: MoveSpeed
-    m_EventTreshold: 15
+    m_EventTreshold: 45
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -6401236786622948866}
   m_Solo: 0
