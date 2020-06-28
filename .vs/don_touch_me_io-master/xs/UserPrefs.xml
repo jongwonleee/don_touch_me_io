@@ -1,0 +1,36 @@
+﻿<Properties StartupConfiguration="{2551AC58-49ED-530A-00DC-3C2D63076535}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Script/EndSceneSetting.cs">
+    <Files>
+      <File FileName="Assets/Script/OnClickStart.cs" Line="29" Column="25" />
+      <File FileName="Assets/Script/PlayerMove.cs" />
+      <File FileName="Assets/Script/EndSceneSetting.cs" Line="19" Column="6" />
+      <File FileName="Assets/Script/TimeCheck.cs" Line="45" Column="17" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="don_touch_me_io-master" expanded="True">
+            <Node name="Assets" expanded="True">
+              <Node name="Resources" expanded="True">
+                <Node name="Text" expanded="True" />
+              </Node>
+              <Node name="Script" expanded="True">
+                <Node name="EndSceneSetting.cs" selected="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+      <Pad Id="MonoDevelop.Debugger.WatchPad">
+        <State />
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="a1064b80-a83a-4945-b809-5e3165627fa8" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
