@@ -1,6 +1,6 @@
 /target:library
 /nowarn:0169
-/out:"Temp/Unity.CollabProxy.Editor.dll"
+/out:"Temp/Unity.VSCode.Editor.dll"
 /debug:portable
 /optimize-
 /nostdlib+
@@ -77,7 +77,7 @@
 /reference:"/Applications/Unity/Hub/Editor/2019.3.13f1/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll"
 /reference:"/Applications/Unity/Hub/Editor/2019.3.13f1/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.dll"
 /reference:"/Applications/개발 툴/Visual Studio.app/Contents/Resources/lib/monodevelop/AddIns/MonoDevelop.Unity/Editor/SyntaxTree.VisualStudio.Unity.Bridge.dll"
-/reference:"/Users/jongwon/Documents/4-1/게임 프로그래밍/don_touch_me_io-master/Library/PackageCache/com.unity.ext.nunit@1.0.0/net35/unity-custom/nunit.framework.dll"
+/reference:"/Users/jongwon/Documents/4-1/game_programming/don_touch_me_io-master/Library/PackageCache/com.unity.ext.nunit@1.0.0/net35/unity-custom/nunit.framework.dll"
 /reference:"/Applications/Unity/Hub/Editor/2019.3.13f1/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Xcode.dll"
 /reference:"/Applications/Unity/Hub/Editor/2019.3.13f1/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Common.dll"
 /reference:"/Applications/Unity/Hub/Editor/2019.3.13f1/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/mscorlib.dll"
@@ -296,20 +296,10 @@
 /define:ENABLE_LEGACY_INPUT_MANAGER
 /define:CSHARP_7_OR_LATER
 /define:CSHARP_7_3_OR_NEWER
-"/Users/jongwon/Documents/4-1/게임 프로그래밍/don_touch_me_io-master/Library/PackageCache/com.unity.collab-proxy@1.2.16/Editor/AssemblyInfo.cs"
-"/Users/jongwon/Documents/4-1/게임 프로그래밍/don_touch_me_io-master/Library/PackageCache/com.unity.collab-proxy@1.2.16/Editor/Collab/Bootstrap.cs"
-"/Users/jongwon/Documents/4-1/게임 프로그래밍/don_touch_me_io-master/Library/PackageCache/com.unity.collab-proxy@1.2.16/Editor/Collab/CollabAnalytics.cs"
-"/Users/jongwon/Documents/4-1/게임 프로그래밍/don_touch_me_io-master/Library/PackageCache/com.unity.collab-proxy@1.2.16/Editor/Collab/CollabHistoryWindow.cs"
-"/Users/jongwon/Documents/4-1/게임 프로그래밍/don_touch_me_io-master/Library/PackageCache/com.unity.collab-proxy@1.2.16/Editor/Collab/CollabToolbarButton.cs"
-"/Users/jongwon/Documents/4-1/게임 프로그래밍/don_touch_me_io-master/Library/PackageCache/com.unity.collab-proxy@1.2.16/Editor/Collab/CollabToolbarWindow.cs"
-"/Users/jongwon/Documents/4-1/게임 프로그래밍/don_touch_me_io-master/Library/PackageCache/com.unity.collab-proxy@1.2.16/Editor/Collab/Presenters/CollabHistoryPresenter.cs"
-"/Users/jongwon/Documents/4-1/게임 프로그래밍/don_touch_me_io-master/Library/PackageCache/com.unity.collab-proxy@1.2.16/Editor/Collab/Views/BuildStatusButton.cs"
-"/Users/jongwon/Documents/4-1/게임 프로그래밍/don_touch_me_io-master/Library/PackageCache/com.unity.collab-proxy@1.2.16/Editor/Collab/Views/CollabHistoryDropDown.cs"
-"/Users/jongwon/Documents/4-1/게임 프로그래밍/don_touch_me_io-master/Library/PackageCache/com.unity.collab-proxy@1.2.16/Editor/Collab/Views/CollabHistoryDropDownItem.cs"
-"/Users/jongwon/Documents/4-1/게임 프로그래밍/don_touch_me_io-master/Library/PackageCache/com.unity.collab-proxy@1.2.16/Editor/Collab/Views/CollabHistoryItem.cs"
-"/Users/jongwon/Documents/4-1/게임 프로그래밍/don_touch_me_io-master/Library/PackageCache/com.unity.collab-proxy@1.2.16/Editor/Collab/Views/CollabHistoryItemFactory.cs"
-"/Users/jongwon/Documents/4-1/게임 프로그래밍/don_touch_me_io-master/Library/PackageCache/com.unity.collab-proxy@1.2.16/Editor/Collab/Views/CollabHistoryRevisionLine.cs"
-"/Users/jongwon/Documents/4-1/게임 프로그래밍/don_touch_me_io-master/Library/PackageCache/com.unity.collab-proxy@1.2.16/Editor/Collab/Views/HistoryProgressSpinner.cs"
-"/Users/jongwon/Documents/4-1/게임 프로그래밍/don_touch_me_io-master/Library/PackageCache/com.unity.collab-proxy@1.2.16/Editor/Collab/Views/ICollabHistoryItemFactory.cs"
-"/Users/jongwon/Documents/4-1/게임 프로그래밍/don_touch_me_io-master/Library/PackageCache/com.unity.collab-proxy@1.2.16/Editor/Collab/Views/PagedListView.cs"
-"/Users/jongwon/Documents/4-1/게임 프로그래밍/don_touch_me_io-master/Library/PackageCache/com.unity.collab-proxy@1.2.16/Editor/Collab/Views/StatusView.cs"
+"/Users/jongwon/Documents/4-1/game_programming/don_touch_me_io-master/Library/PackageCache/com.unity.ide.vscode@1.2.0/Editor/ProjectGeneration/AssemblyNameProvider.cs"
+"/Users/jongwon/Documents/4-1/game_programming/don_touch_me_io-master/Library/PackageCache/com.unity.ide.vscode@1.2.0/Editor/ProjectGeneration/FileIO.cs"
+"/Users/jongwon/Documents/4-1/game_programming/don_touch_me_io-master/Library/PackageCache/com.unity.ide.vscode@1.2.0/Editor/ProjectGeneration/GUIDGenerator.cs"
+"/Users/jongwon/Documents/4-1/game_programming/don_touch_me_io-master/Library/PackageCache/com.unity.ide.vscode@1.2.0/Editor/ProjectGeneration/ProjectGeneration.cs"
+"/Users/jongwon/Documents/4-1/game_programming/don_touch_me_io-master/Library/PackageCache/com.unity.ide.vscode@1.2.0/Editor/ProjectGeneration/ProjectGenerationFlag.cs"
+"/Users/jongwon/Documents/4-1/game_programming/don_touch_me_io-master/Library/PackageCache/com.unity.ide.vscode@1.2.0/Editor/VSCodeDiscovery.cs"
+"/Users/jongwon/Documents/4-1/game_programming/don_touch_me_io-master/Library/PackageCache/com.unity.ide.vscode@1.2.0/Editor/VSCodeScriptEditor.cs"
