@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ChangingNPCMove : MonoBehaviour
 {
-    public float Speed = 5.0f;
+    public float Speed;
     public float rotateSpeed;
 
     Vector3 Movement;
@@ -17,6 +17,9 @@ public class ChangingNPCMove : MonoBehaviour
     {
         rigid = GetComponent<Rigidbody>();
         anim = GetComponent<Animator>();
+
+        Speed = 15.0f;
+        rotateSpeed = 15.0f;
 
         Invoke("Think", 0.5f);
     }
@@ -47,10 +50,10 @@ public class ChangingNPCMove : MonoBehaviour
     {
         horizontalMove = Random.Range(-5.0f, 5.0f);
         verticalMove = Random.Range(-5.0f, 5.0f);
-        Speed = Random.Range(3.0f, 6.0f);
+        Speed = Random.Range(10.0f, 20.0f);
         anim.SetFloat("MoveSpeed", Speed);
 
-        float nextThinkTime = Random.Range(2.0f, 3.0f);
+        float nextThinkTime = Random.Range(3.0f, 5.0f);
         Invoke("Think", nextThinkTime);
     }
 
@@ -60,6 +63,7 @@ public class ChangingNPCMove : MonoBehaviour
         {
             CancelInvoke();
             verticalMove *= -1; horizontalMove *= -1;
+            Speed = Random.Range(15.0f, 30.0f);
             Invoke("Think", 3.0f);
         }
     }

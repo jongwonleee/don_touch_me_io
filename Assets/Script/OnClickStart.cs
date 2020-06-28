@@ -1,37 +1,31 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class OnClickStart : MonoBehaviour
 {
-    // Start is called before the first frame update
-    public Canvas canvasMain;
     public Canvas canvasStart;
+    public Canvas canvasMain;
     public Canvas canvasEnd;
+
     void Start()
     {
-        canvasMain.enabled = false;
         canvasStart.enabled = true;
+        canvasMain.enabled = false;
         canvasEnd.enabled = false;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     public void OnClickStartButton()
     {
         canvasStart.enabled = false;
-        canvasEnd.enabled = false;
         canvasMain.enabled = true;
+        canvasEnd.enabled = false;
     }
 
     public void OnClickRestartButton()
     {
-        canvasStart.enabled = false;
-        canvasEnd.enabled = false;
-        canvasMain.enabled = true;
+        SceneManager.LoadScene("SampleScene");
     }
 }

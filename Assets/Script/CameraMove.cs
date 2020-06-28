@@ -5,6 +5,7 @@ using UnityEngine;
 public class CameraMove : MonoBehaviour
 {
     public GameObject Player;
+    PlayerMove PM;
 
     public float Xoffset = 0f;
     public float Yoffset = 50f;
@@ -13,6 +14,17 @@ public class CameraMove : MonoBehaviour
     public float followSpeed;
 
     Vector3 CameraPosition;
+
+    void Awake()
+    {
+        PM = Player.GetComponent<PlayerMove>();
+    }
+
+    void Update()
+    {
+        followSpeed = PM.Speed / 10.0f;
+    }
+
     void LateUpdate()
     {
         CameraPosition.x = Player.transform.position.x + Xoffset;

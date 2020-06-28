@@ -6,19 +6,20 @@ public class PlayerMove : MonoBehaviour
 {
     public float Speed;
     public float rotateSpeed;
-    public Canvas canvasEnd;
-
+   
     Vector3 Movement;
     float verticalmove;
     float horizontalmove;
 
     bool Mask;
 
+    public Canvas canvasMain;
+    public Canvas canvasEnd;
+
     Rigidbody rigid;
     Animator anim;
     CapsuleCollider Ccollider;
     BoxCollider Bcollider;
-    MeshRenderer render;
     void Awake()
     {
         //Initialize Component
@@ -26,15 +27,16 @@ public class PlayerMove : MonoBehaviour
         anim = GetComponent<Animator>();
         Ccollider = GetComponent<CapsuleCollider>();
         Bcollider = GetComponent<BoxCollider>();
-        render = GetComponent<MeshRenderer>();
 
         Mask = false;
+
+        Speed = 15.0f;
         rotateSpeed = 15.0f;
     }
 
     void Update()
     {
-        if (gameObject.layer == 8)
+        if (gameObject.layer != 9 && canvasMain.enabled)
         {
             verticalmove = Input.GetAxisRaw("Vertical");
             horizontalmove = Input.GetAxisRaw("Horizontal");
@@ -76,7 +78,7 @@ public class PlayerMove : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "NPC") 
+        if (collision.gameObject.tag == "NPC" && gameObject.layer == 8) 
         {
             Damaged();
         }
@@ -92,6 +94,7 @@ public class PlayerMove : MonoBehaviour
         }
         if (collision.gameObject.tag == "Shield") 
         {
+            collision.gameObject.SetActive(false);
             Invincibility();
             Invoke("DeActive", 5.0f);
         }
@@ -101,13 +104,15 @@ public class PlayerMove : MonoBehaviour
     {
         if (Mask == false)
         {
+            canvasMain.enabled = false;
             canvasEnd.enabled = true;
             gameObject.layer = 9;
             rigid.AddForce(Vector3.up * 5, ForceMode.Impulse);
             Ccollider.enabled = false;
             Bcollider.enabled = true;
+            verticalmove = 0;
+            horizontalmove = 0;
             anim.SetBool("isHit", true);
-
         }
         else 
         {
@@ -119,19 +124,19 @@ public class PlayerMove : MonoBehaviour
 
     void Faster() 
     {
-        Speed = 6.0f;
+        Speed = 30.0f;
         anim.SetBool("isBoost", true);
     }
 
     void Slower() 
     {
-        Speed = 4.0f;
+        Speed = 15.0f;
         anim.SetBool("isBoost", false);
     }
 
     void Invincibility() 
     {
-        gameObject.layer = 9;
+        gameObject.layer = 10;
     }
 
     void DeActive() 

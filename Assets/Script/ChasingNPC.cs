@@ -5,7 +5,7 @@ using UnityEngine.AI;
 
 public class ChasingNPC : MonoBehaviour
 {
-    public float Speed = 3.0f;
+    public float Speed;
     public float rotateSpeed;
 
     Vector3 Offset;
@@ -27,7 +27,13 @@ public class ChasingNPC : MonoBehaviour
         anim = GetComponent<Animator>();
         nav = GetComponent<NavMeshAgent>();
 
+        nav.speed = 13.0f;
+
         Player = GameObject.FindGameObjectWithTag("Player");
+
+        Speed = 15.0f;
+        rotateSpeed = 15.0f;
+        ChasingDis = 45.0f;
 
         Invoke("Think", 0.5f);
     }
@@ -72,12 +78,24 @@ public class ChasingNPC : MonoBehaviour
         horizontalMove = Random.Range(-5.0f, 5.0f);
         verticalMove = Random.Range(-5.0f, 5.0f);
 
-        float nextThinkTime = Random.Range(2.0f, 3.0f);
+        float nextThinkTime = Random.Range(3.0f, 5.0f);
         Invoke("Think", nextThinkTime);
+    }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Wall" && !nav.enabled)
+        {
+            CancelInvoke();
+            verticalMove *= -1; horizontalMove *= -1;
+            Speed = Random.Range(10.0f, 20.0f);
+            Invoke("Think", 3.0f);
+        }
     }
 
     void Chase() 
     {
         nav.SetDestination(Player.transform.position);
     }
+
 }

@@ -19,6 +19,9 @@ public class FastNPCMove : MonoBehaviour
         rigid = GetComponent<Rigidbody>();
         anim = GetComponent<Animator>();
 
+        Speed = 30.0f;
+        rotateSpeed = 15.0f;
+
         Invoke("Think", 0.5f);
     }
 
@@ -49,7 +52,7 @@ public class FastNPCMove : MonoBehaviour
         horizontalMove = Random.Range(-5.0f, 5.0f);
         verticalMove = Random.Range(-5.0f, 5.0f);
 
-        float nextThinkTime = Random.Range(2.0f, 3.0f);
+        float nextThinkTime = Random.Range(3.0f, 5.0f);
         Invoke("Think", nextThinkTime);
     }
 
