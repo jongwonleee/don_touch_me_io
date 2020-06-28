@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System.IO;
 using UnityEngine.SceneManagement;
 
 public class OnClickStart : MonoBehaviour
@@ -14,9 +15,9 @@ public class OnClickStart : MonoBehaviour
     void Start()
     {
         TC = canvasMain.GetComponent<TimeCheck>();
-        canvasStart.enabled = true;
-        canvasMain.enabled = false;
-        canvasEnd.enabled = false;
+        //canvasStart.enabled = true;
+        //canvasMain.enabled = false;
+        //canvasEnd.enabled = false;
     }
 
     public void OnClickStartButton()
@@ -32,6 +33,12 @@ public class OnClickStart : MonoBehaviour
 
     public void OnClickRestartButton()
     {
+        FileStream f = new FileStream("Assets/Resources/Text/Restart.txt", FileMode.Create, FileAccess.Write);
+        StreamWriter writer = new StreamWriter(f, System.Text.Encoding.Unicode);
+        writer.WriteLine("true");
+        writer.Close();
+        f.Close();
         SceneManager.LoadScene("SampleScene");
+
     }
 }
