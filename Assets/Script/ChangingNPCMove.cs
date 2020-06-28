@@ -21,7 +21,7 @@ public class ChangingNPCMove : MonoBehaviour
         Speed = 15.0f;
         rotateSpeed = 15.0f;
 
-        Invoke("Think", 0.5f);
+        Think();
     }
 
     void FixedUpdate()
@@ -62,7 +62,7 @@ public class ChangingNPCMove : MonoBehaviour
         if (collision.gameObject.tag == "Wall")
         {
             CancelInvoke();
-            verticalMove *= -1; horizontalMove *= -1;
+            horizontalMove *= -1;
             Speed = Random.Range(15.0f, 30.0f);
             Invoke("Think", 3.0f);
         }

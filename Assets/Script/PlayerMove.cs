@@ -98,6 +98,12 @@ public class PlayerMove : MonoBehaviour
             Invincibility();
             Invoke("DeActive", 5.0f);
         }
+        if (collision.gameObject.tag == "Smaller") 
+        {
+            collision.gameObject.SetActive(false);
+            Smaller();
+            Invoke("Bigger", 5.0f);
+        }
     }
 
     void Damaged()
@@ -142,5 +148,13 @@ public class PlayerMove : MonoBehaviour
     void DeActive() 
     {
         gameObject.layer = 8;
+    }
+
+    void Smaller() {
+        gameObject.transform.localScale = new Vector3(2.0f, 2.0f, 2.0f);
+    }
+
+    void Bigger() {
+        gameObject.transform.localScale = new Vector3(5.0f, 5.0f, 5.0f);
     }
 }

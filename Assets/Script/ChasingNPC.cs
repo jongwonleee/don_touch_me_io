@@ -35,7 +35,7 @@ public class ChasingNPC : MonoBehaviour
         rotateSpeed = 15.0f;
         ChasingDis = 45.0f;
 
-        Invoke("Think", 0.5f);
+        Think();
     }
 
     void Update()
@@ -87,7 +87,7 @@ public class ChasingNPC : MonoBehaviour
         if (collision.gameObject.tag == "Wall" && !nav.enabled)
         {
             CancelInvoke();
-            verticalMove *= -1; horizontalMove *= -1;
+            horizontalMove *= -1;
             Speed = Random.Range(10.0f, 20.0f);
             Invoke("Think", 3.0f);
         }
