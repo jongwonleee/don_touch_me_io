@@ -1,9 +1,8 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using System.Globalization;
+﻿using System.Globalization;
 using System.IO;
 using UnityEngine;
 using UnityEngine.UI;
+using System;
 
 public class EndSceneSetting : MonoBehaviour
 {
@@ -17,33 +16,51 @@ public class EndSceneSetting : MonoBehaviour
     private TextAsset data;
     void Start()
     {
-        //data = Resources.Load("Text/BestScore.txt", typeof(TextAsset)) as TextAsset;
-        //StringReader sr = new StringReader(data.text);
-        //if (best == null || best == "") best = "0.0";
-        //best = sr.ReadLine();
-        //if (data==null) best = "0.0";
-        //else
-        //{
+        try
+        {
+            FileStream f = new FileStream("BestScore.dat", FileMode.OpenOrCreate, FileAccess.Read);
+            StreamReader reader = new StreamReader(f, System.Text.Encoding.Unicode);
+            best = reader.ReadLine();
+            reader.Close();
+            f.Close();
+        }
+        catch (Exception)
+        {
+            best = "0.0";
+        }
 
-        //}
-        FileStream f = new FileStream("Assets/Resources/Text/BestScore.txt",FileMode.OpenOrCreate,FileAccess.Read);
-        StreamReader reader = new StreamReader(f, System.Text.Encoding.Unicode);
-        best = reader.ReadLine();
 
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (canvas.enabled && !setCanvas && nowRecord.text!="")
+        if (canvas.enabled && !setCanvas && nowRecord.text != "")
         {
-            float scoreNow = float.Parse(nowRecord.text, CultureInfo.InvariantCulture);
-            float scoreBest = float.Parse(best, CultureInfo.InvariantCulture);
+            float scoreNow = 0.0f;
+            float scoreBest = 0.0f;
+            try
+            {
+                 scoreBest = float.Parse(best, CultureInfo.InvariantCulture);
+            }
+            catch (Exception)
+            {
+                scoreBest = 0f;
+            }
+            try
+            {
+                scoreNow = float.Parse(nowRecord.text, CultureInfo.InvariantCulture);
+            }
+            catch (Exception)
+            {
+                scoreNow = 0f;
+            }
+
             if (scoreNow > scoreBest)
             {
                 scoreBest = scoreNow;
                 best = scoreBest.ToString();
-                FileStream f = new FileStream("Assets/Resources/Text/BestScore.txt", FileMode.Create, FileAccess.Write);
+                FileStream f = new FileStream("BestScore.dat", FileMode.OpenOrCreate, FileAccess.Write);
                 StreamWriter writer = new StreamWriter(f, System.Text.Encoding.Unicode);
                 writer.WriteLine(best);
                 writer.Close();

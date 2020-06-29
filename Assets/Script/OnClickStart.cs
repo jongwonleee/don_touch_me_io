@@ -37,7 +37,7 @@ public class OnClickStart : MonoBehaviour
 
     public void OnClickRestartButton()
     {
-        FileStream f = new FileStream("Assets/Resources/Text/Restart.txt", FileMode.Create, FileAccess.Write);
+        FileStream f = new FileStream("Restart.dat", FileMode.Create, FileAccess.Write);
         StreamWriter writer = new StreamWriter(f, System.Text.Encoding.Unicode);
         writer.WriteLine("true");
         writer.Close();

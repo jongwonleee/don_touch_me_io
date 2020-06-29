@@ -15,11 +15,14 @@ public class OnRestartButtonClicked : MonoBehaviour
     {
         TC = canvasMain.GetComponent<TimeCheck>();
         IS = canvasMain.GetComponent<ItemSpawning>();
-        FileStream f = new FileStream("Assets/Resources/Text/Restart.txt", FileMode.OpenOrCreate, FileAccess.Read);
+        FileStream f = new FileStream("Restart.dat", FileMode.OpenOrCreate, FileAccess.Read);
         StreamReader reader = new StreamReader(f, System.Text.Encoding.Unicode);
         string str = reader.ReadLine();
+        reader.Close();
+        f.Close();
 
-        if (str.Equals("true"))
+        
+        if (str!=null && str.Equals("true"))
         {
             canvasStart.enabled = false;
             canvasMain.enabled = true;
@@ -46,7 +49,7 @@ public class OnRestartButtonClicked : MonoBehaviour
     }
     void OnApplicationQuit()
     {
-        FileStream f = new FileStream("Assets/Resources/Text/Restart.txt", FileMode.Create, FileAccess.Write);
+        FileStream f = new FileStream("Restart.dat", FileMode.Create, FileAccess.Write);
         StreamWriter writer = new StreamWriter(f, System.Text.Encoding.Unicode);
         writer.WriteLine("false");
         writer.Close();
